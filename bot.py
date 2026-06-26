@@ -1,13 +1,25 @@
 import os
 import logging
-from telegram import Update
-from telegram.ext import Application, CommandHandler, ContextTypes
+from telegram import Update, InlineKeyboardButton, InlineKeyboardMarkup
+from telegram.ext import Application, CommandHandler,ContextTypes, CallbackQueryHandler
 
 # Bật ghi log (logging) để theo dõi lỗi hoặc trạng thái của bot
 logging.basicConfig(
     format="%(asctime)s - %(name)s - %(levelname)s - %(message)s", level=logging.INFO
 )
 logger = logging.getLogger(__name__)
+
+def get_text(lang_code: str, key: str) -> str:
+    try:
+        # Đường dẫn động tìm đến đúng file vi.json, en.json hoặc ru.json
+        file_path = f"languages/{lang_code}.json"
+        with open(file_path, "r", encoding="utf-8") as f:
+            data = json.load(f)
+            return data.get(key, f"[{key}]")  # Trả về chuỗi chữ theo từ khóa (key)
+    except Exception:
+        return f"[{key}]"  # Nếu lỗi (thiếu file), trả về tạm tên từ khóa
+
+
 
 # Hàm xử lý khi người dùng gõ lệnh /start
 async def start(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
