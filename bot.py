@@ -76,6 +76,9 @@ def main() -> None:
     # Đăng ký các lệnh (command) để bot nhận diện
     application.add_handler(CommandHandler("start", start))
     application.add_handler(CommandHandler("hoi", brain))
+    # Lắng nghe bất kỳ nút bấm nào có callback_data bắt đầu bằng chữ "lang_"
+    application.add_handler(CallbackQueryHandler(button_click, pattern="^lang_"))
+
 
     # Chạy bot liên tục cho đến khi nhận lệnh dừng (Ctrl+C trên máy tính)
     print("Bot đang chạy... Nhấn Ctrl+C để dừng.")
