@@ -43,6 +43,22 @@ async def start(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
     # 3. Gửi tin nhắn chứa menu nút bấm cho khách
     await update.message.reply_text(full_message, reply_markup=reply_markup)
 
+async def button_click(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
+    query = update.callback_query
+    await query.answer()  # Nhấp nháy báo nhận lệnh từ Telegram để nút bấm không bị treo cát
+
+    # Nếu data là "lang_vi" -> selected_lang sẽ là "vi"
+    selected_lang = query.data.replace("lang_", "")
+    
+    # 💾 QUAN TRỌNG: Lưu mã ngôn ngữ vào bộ nhớ của bot gắn liền với User này
+    context.user_data["lang"] = selected_lang
+
+    # Lấy câu thông báo "Đã thiết lập ngôn ngữ thành công..." từ file tương ứng
+    response_text = get_text(selected_lang, "lang_selected")
+
+    # Thay đổi (sửa) nội dung tin nhắn cũ thành lời xác nhận ngôn ngữ thành công
+    await query.edit_message_text(text=response_text)
+    
 
 # Hàm xử lý khi người dùng gõ lệnh /hoi (Đây chính là 'bộ não' của bot)
 async def brain(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
