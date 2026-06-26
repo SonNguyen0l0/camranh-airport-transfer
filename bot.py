@@ -23,8 +23,26 @@ def get_text(lang_code: str, key: str) -> str:
 
 # Hàm xử lý khi người dùng gõ lệnh /start
 async def start(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
-    user = update.effective_user
-    await update.message.reply_text(f"Chào {user.first_name}! 👋 Tôi là bot AI của bạn. Hãy gõ /hoi để tôi tư vấn nhé!")
+    # 1. Gom lời chào từ 3 ngôn ngữ
+    welcome_vi = get_text("vi", "welcome")
+    welcome_en = get_text("en", "welcome")
+    welcome_ru = get_text("ru", "welcome")
+    
+    full_message = f"{welcome_vi}\n\n---\n\n{welcome_en}\n\n---\n\n{ru_message}"
+
+    # 2. Tạo hàng nút bấm. Mỗi nút có 'callback_data' để bot biết khách bấm nút nào
+    keyboard = [
+        [
+            InlineKeyboardButton("Tiếng Việt 🇻🇳", callback_data="lang_vi"),
+            InlineKeyboardButton("English 🇬🇧", callback_data="lang_en"),
+            InlineKeyboardButton("Русский 🇷🇺", callback_data="lang_ru")
+        ]
+    ]
+    reply_markup = InlineKeyboardMarkup(keyboard)
+
+    # 3. Gửi tin nhắn chứa menu nút bấm cho khách
+    await update.message.reply_text(full_message, reply_markup=reply_markup)
+
 
 # Hàm xử lý khi người dùng gõ lệnh /hoi (Đây chính là 'bộ não' của bot)
 async def brain(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
