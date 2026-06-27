@@ -1,0 +1,76 @@
+{
+  "routes": [
+    {
+      "id": "r1",
+      "label_vi": "📍 Sân bay Cam Ranh → Trung tâm Nha Trang",
+      "label_en": "📍 Cam Ranh Airport → Nha Trang Center",
+      "label_ru": "📍 Аэропорт Камрань → Центр Нячанга",
+      "prices": {
+        "sedan4": 250000,
+        "mpv7": 300000,
+        "van16": 550000,
+        "bus29": 900000
+      }
+    },
+    {
+      "id": "r2",
+      "label_vi": "📍 Sân bay Cam Ranh → Vinpearl Resort",
+      "label_en": "📍 Cam Ranh Airport → Vinpearl Resort",
+      "label_ru": "📍 Аэропорт Камрань → Курорт Vinpearl",
+      "prices": {
+        "sedan4": 280000,
+        "mpv7": 340000,
+        "van16": 600000,
+        "bus29": 1000000
+      }
+    },
+    {
+      "id": "r3",
+      "label_vi": "📍 Sân bay Cam Ranh → Ninh Vân Bay",
+      "label_en": "📍 Cam Ranh Airport → Ninh Vân Bay",
+      "label_ru": "📍 Аэропорт Камрань → Бухта Нинь Ван",
+      "prices": {
+        "sedan4": 320000,
+        "mpv7": 380000,
+        "van16": 650000,
+        "bus29": 1100000
+      }
+    },
+    {
+      "id": "r4",
+      "label_vi": "📍 Sân bay Cam Ranh → Phan Rang",
+      "label_en": "📍 Cam Ranh Airport → Phan Rang",
+      "label_ru": "📍 Аэропорт Камрань → Фан Ранг",
+      "prices": {
+        "sedan4": 450000,
+        "mpv7": 550000,
+        "van16": 900000,
+        "bus29": 1500000
+      }
+    },
+    {
+      "id": "r5",
+      "label_vi": "📍 Sân bay Cam Ranh → Đà Lạt",
+      "label_en": "📍 Cam Ranh Airport → Da Lat",
+      "label_ru": "📍 Аэропорт Камрань → Да Лат",
+      "prices": {
+        "sedan4": 1200000,
+        "mpv7": 1400000,
+        "van16": 2200000,
+        "bus29": 3500000
+      }
+    },
+    {
+      "id": "r6",
+      "label_vi": "📍 Sân bay Cam Ranh → Cam Ranh City",
+      "label_en": "📍 Cam Ranh Airport → Cam Ranh City",
+      "label_ru": "📍 Аэропорт Камрань → Город Камрань",
+      "prices": {
+        "sedan4": 150000,
+        "mpv7": 200000,
+        "van16": 380000,
+        "bus29": 650000
+      }
+    }
+  ]
+}

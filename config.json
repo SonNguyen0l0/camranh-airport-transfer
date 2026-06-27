@@ -1,0 +1,42 @@
+{
+  "contact": {
+    "telegram": "@CR_Airport_Transfer",
+    "whatsapp": "+84 825 779 413",
+    "phone": "0825779413"
+  },
+  "deposit_amount_vnd": 500000,
+  "deposit_threshold_vnd": 500000,
+  "currency": "VND",
+  "bank": {
+    "bank_id": "MB",
+    "account_number": "YOUR_ACCOUNT_NUMBER",
+    "account_name": "NGUYEN VAN A",
+    "note": "Thay bank_id (VD: MB, VCB, TCB, ACB...), account_number và account_name bằng thông tin thật"
+  },
+  "car_types": {
+    "sedan4": {
+      "label_vi": "🚗 Xe 4 chỗ (Sedan)",
+      "label_en": "🚗 4-Seat Sedan",
+      "label_ru": "🚗 Седан 4 места",
+      "max_passengers": 3
+    },
+    "mpv7": {
+      "label_vi": "🚙 Xe 7 chỗ (MPV)",
+      "label_en": "🚙 7-Seat MPV",
+      "label_ru": "🚙 Минивэн 7 мест",
+      "max_passengers": 6
+    },
+    "van16": {
+      "label_vi": "🚐 Xe 16 chỗ",
+      "label_en": "🚐 16-Seat Van",
+      "label_ru": "🚐 Микроавтобус 16 мест",
+      "max_passengers": 15
+    },
+    "bus29": {
+      "label_vi": "🚌 Xe 29 chỗ",
+      "label_en": "🚌 29-Seat Bus",
+      "label_ru": "🚌 Автобус 29 мест",
+      "max_passengers": 28
+    }
+  }
+}
