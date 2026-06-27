@@ -72,5 +72,17 @@
         "bus29": 650000
       }
     },
+    {
+      "id": "r7",
+      "label_vi": "📍 Sân bay Cam Ranh → Vịnh Vĩnh Hy",
+      "label_en": "📍 Cam Ranh Airport → Cam Ranh City",
+      "label_ru": "📍 Аэропорт Камрань → Город Камрань",
+      "prices": {
+        "sedan4": 150000,
+        "mpv7": 200000,
+        "van16": 380000,
+        "bus29": 650000
+      }
+    }
   ]
 }
